@@ -53,6 +53,9 @@ runs:
     - name: Test Downstream
       shell: bash
       run: |
+        set -x
         pushd ./src/${{ inputs.downstream-module }}
-        go test -race ./...
+        apt-install -y tree
+        tree .
+        go test -v -race ./...
         popd
