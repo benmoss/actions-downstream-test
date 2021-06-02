@@ -55,7 +55,7 @@ runs:
       run: |
         set -x
         pushd ./src/${{ inputs.downstream-module }}
-        apt-install -y tree
+        apt-get install -y tree
         tree .
         go test -v -race ./...
         popd
